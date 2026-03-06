@@ -1,10 +1,9 @@
-# Prompt 3: Entidades de Dominio (C# 14 Features)
+# Prompt 03: Entidades del Dominio
 
-**Rol:** Desarrollador Backend Senior.
-**Contexto:** Proyecto `FoodCampus.Domain` (Cero dependencias).
-**Tarea:** Crear las entidades `Restaurante`, `Pedido` y `DetallePedido`.
+Actúa como un desarrollador backend experto en C#. Genera las entidades del dominio para el proyecto "FoodCampus" en el namespace `FoodCampus.Domain`. 
+Deben ser clases con lógica de validación interna simple:
+1. `Restaurante`: Id (int), Nombre (string), Especialidad (string), HorarioApertura (TimeSpan), HorarioCierre (TimeSpan). Agregar método `EstaAbierto()` que compare con la hora actual.
+2. `Pedido`: Id (int), Usuario (string), Fecha (DateTime), CostoEnvio (decimal). Validar que el costo de envío no sea negativo.
+3. `DetallePedido`: Id (int), PedidoId (int), RestauranteId (int), Cantidad (int), PrecioUnitario (decimal).
 
-**Requisitos de C# 14:**
-1. **Keyword `field`:** Implementar las propiedades `Cantidad` (DetallePedido) y `CostoEnvio` (Pedido) usando la nueva palabra clave `field` en el setter para validar que no sean valores negativos o inválidos, evitando campos privados manuales.
-2. **Extension Members:** Crear una propiedad de extensión estática llamada `EstaAbierto` que determine si un restaurante puede dar servicio comparando `TimeSpan.FromTicks(DateTime.Now.Ticks)` con sus campos de horario.
-3. Usar **File-scoped namespaces** y **Primary Constructors** donde sea posible para un código limpio.
+Utiliza constructores para inicializar las propiedades. Genera solo el código C#.

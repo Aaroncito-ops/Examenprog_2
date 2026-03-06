@@ -1,11 +1,15 @@
-# Prompt 8: Interfaz de Consola y Resiliencia
+# Prompt 08: Interfaz de Consola y DI
 
-**Rol:** Desarrollador de Aplicaciones Multiplataforma.
-**Contexto:** Proyecto `FoodCampus.API` (Consola).
-**Tarea:** Crear el menú interactivo y configurar el arranque del sistema.
+Actúa como un desarrollador backend para el proyecto "FoodCampus". 
+Genera la clase `Program` que:
+1. Configure `ServiceCollection` para inyección de dependencias (`IAppLogger`, `IRestauranteRepository`, `IPedidoRepository`, `ServicioCatalogo`, `ServicioPedidos`).
+2. Utilice la cadena de conexión: `Server=test_utm_ACM.mssql.somee.com;Initial Catalog=test_utm_ACM;Persist Security Info=False;User ID=YourUser;Password=YourPassword;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;`.
+3. Implemente un bucle `while` para mostrar el menú de consola:
+   1. Consultar Catálogo de Restaurantes.
+   2. Registrar Nuevo Restaurante (solicitar datos).
+   3. Crear Nuevo Pedido (Maestro-Detalle), solicitando `Nombre del Usuario` al inicio.
+   4. Consultar Pedidos por Usuario (solicitar nombre y mostrar lista de sus pedidos con detalles y totales).
+   5. Salir.
+4. Implemente el manejo de errores global (SQL, Reglas de Negocio, General).
 
-**Requisitos Técnicos:**
-1. **Inyección de Dependencias:** Configurar `ServiceCollection` usando **Unbound Generics** con la sintaxis `nameof(Repository<>)` para el registro de logs o repositorios genéricos.
-2. **Robustez:** Implementar un bucle de menú que use `TryParse` para todas las entradas del usuario.
-3. **Resiliencia:** Envolver las llamadas a los servicios en bloques `try-catch` específicos para errores de SQL (timeouts de Somee), mostrando mensajes amigables en color **Rojo** sin que la app se cierre.
-4. El menú debe permitir: Registrar restaurante, Consultar catálogo y Crear Pedido Maestro-Detalle.
+Asegura que el diseño sea modular y profesional. Genera solo el código C#.

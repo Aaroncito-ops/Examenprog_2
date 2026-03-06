@@ -1,11 +1,9 @@
-# Prompt 5: Mappers y Transformadores de Objetos
+# Prompt 05: Extensiones de Mapeo (ToDomain, ToDTO)
 
-**Rol:** Ingeniero de Software.
-**Contexto:** Proyecto `FoodCampus.Application`.
-**Tarea:** Crear la lógica de mapeo entre capas.
+Actúa como un desarrollador senior en C#. Genera una clase estática `MappingExtensions` en `FoodCampus.Application.Mappers` para el proyecto "FoodCampus". 
+Incluir:
+1. Métodos de extensión para convertir modelos de infraestructura a entidades de dominio (ToDomain): `RestauranteModel`, `PedidoModel` (incluyendo `Usuario`), `DetallePedidoModel`.
+2. Métodos de extensión para convertir entidades de dominio a DTOs de presentación (ToDTO): `RestauranteDTO`, `PedidoDTO` (que acepte `totalCalculado` y asigne `Usuario`), `DetallePedidoDTO` (que acepte `restauranteNombre`).
+3. DTOs correspondientes en el namespace `FoodCampus.Application.DTOs`.
 
-**Instrucciones:**
-1. Crear una clase `MappingProfile` o métodos de extensión.
-2. Implementar transformaciones de `Infraestructure.Models` a `Domain.Entities`.
-3. Implementar transformaciones de `Domain.Entities` a `DTOs` (Data Transfer Objects) para la capa de presentación.
-4. Justificar la separación para mantener el Dominio "puro".
+Asegura un diseño limpio y que los DTOs utilicen `record` o clases inmutables. Genera solo el código C#.
